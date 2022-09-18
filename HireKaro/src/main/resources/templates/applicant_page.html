@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Applicant Page</title>
+<link rel="shortcut icon" href="http://www.iconarchive.com/download/i47277/avosoft/warm-toolbar/user.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+margin-bottom: 0;
+border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+padding-top: 20px;	
+background-color:#DFCFBE ;
+height: 130%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+background-color: #555;
+color: white;
+padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+.sidenav {
+height: auto;
+padding: 15px;
+}
+.row.content {height:100%;}
+}
+
+h4{
+ 
+  color: #7c795d; font-family: "Trebuchet MS", Helvetica, sans-serif;  font-weight: bold; line-height: 48px; margin: 0;
+  font-size: 20px;
+ 
+}
+
+body
+{
+background-image : url("");
+background-position: center;
+background-size: cover;
+}
+
+
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" >HireKaro</a>
+</div>
+<div class="collapse navbar-collapse" id="myNavbar">
+<ul class="nav navbar-nav">
+<li class="active"><a>Home</a></li>
+<li><a th:href="@{/home}">About</a></li>
+<li><a th:href="@{/jobSearch}">Jobs</a></li>
+<li><a th:href="@{/home}">Contact</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li><a th:href="@{/home}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+
+
+<div class="container-fluid text-center">
+<div class="row content">
+<div class="col-sm-2 sidenav ">
+<h4><a th:href="@{/UpdateUser}">UPDATE PROFILE</a></h4>
+<h4><a th:href="@{/jobSearch}">JOB SEARCH</a></h4>
+<h4><a  th:href="@{'/uploadResume/' + ${mail}}">UPLOAD RESUME</a></h4>
+
+
+
+</div>
+<div class="col-sm-10">
+<center><h1 style="font-family:garadana">Welcome   <a th:text="${name}"></a></h1>
+
+<h3> <p style="font-family : garadana ; text-align: justify;"> HireKaro is a one of the leading Job portal platform for upgrading the jobseekers lives. About Ten thousands jobseekers use our platform to increase their knowledge and employement opportunities.Our mission is just help them grow but help them grow better and stronger. Thats how we will build our future generations ... </p></h3>
+<hr></center>
+<div style="font-size : 30px;"><p text>Shine with US!</p></div>
+</div>
+
+
+
+</div>
+</div>
+</body>
+</html>

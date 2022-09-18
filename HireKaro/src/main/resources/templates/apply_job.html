@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Apply Jobs Here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+
+</style>
+
+
+<body>
+<form th:action="@{/savejobapps}" method="post" th:object="${application}">
+  <div class="container">
+    <h1>Apply For a Job</h1>
+    <hr>
+
+<table>
+<tr>
+
+   <tr><label for="jpost"><b>Job Post</b></label><br>
+   <input type="text"  name="jpost"  th:value="${jpost}" readonly><br> 
+  
+    
+    
+    <tr><label for="companyCode"><b>Company Code</b></label><br>
+    <input type="text"  name="companyCode"  th:value="${companyCode}" readonly><br> 
+ 
+    
+    <tr><label for="email"><b>Email</b></label>
+    <input type="text" name="applicantEmail" placeholder="Enter your Email"  required><br></tr>
+
+    <tr><label ><b>Full Name</b></label>
+    <input type="text" name="applicantName" placeholder="Enter FullName" required><br></tr>
+
+    <tr><label ><b>Mobile Number</b></label>
+    <input type="text" name="applicantMob" placeholder="Enter Mobile.No " required><br></tr>
+    
+    <tr><label ><b>Skills Matched</b></label>
+    <input type="text" name="skills" placeholder="Enter skills matched as per required "  required><br></tr>
+    
+   </table>
+    
+    <hr>
+    <button type="submit" class="registerbtn">Submit</button>
+  </div>
+</form>
+
+
+</body>
+</html>

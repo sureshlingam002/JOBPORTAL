@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Register your Company</title>
+<title>Company Page</title>
+  <link rel="shortcut icon" href="http://www.iconarchive.com/download/i47277/avosoft/warm-toolbar/user.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>    
+body {
+	background: url("https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?cs=srgb&dl=pexels-bich-tran-669996.jpg&fm=jpg");
+	background-size: cover;
+}
+#signup {
+	padding-top: 50px;
+}
+h1, p {
+	text-align: center;
+	color: #1a1a1a;
+}
+h1 {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 40px;
+	line-height: 10px;
+}
+p {
+	font-family:'Open Sans', sans-serif;
+}
+#container {
+	width: 400px;
+	height: 400px;
+	background-color: #7F7979;
+	margin: auto;
+	border-radius: 10px;
+}
+form {
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	padding-top: 50px;
+}
+input {
+	width: 75%;
+	padding: 15px;
+	margin: 8px 0;
+	border-radius: 5px;
+}
+input[type=submit] {
+	width: 50%;
+	background-color: #FFE066;
+	border: none;
+	color: #1a1a1a;
+}
+
+
+</style>
+</head>
+<body>
+<div id="signup">
+<h1><font color="white">Register!</font></h1>
+<p><font color="white">Welcome!!</font></p>
+<div id ="container">
+	<form th:action="@{/company_register_success}" method="post" th:object="${company_users}">
+			<input type="text" placeholder="Company Code" name="companyCode" required><br />
+			<input type="email" placeholder="E-mail Id" name="companyEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br />
+			<input type="text" placeholder="Company Name" name="companyName" required><br />
+			<input type="text" placeholder="Web-Address" name="companyWebsite" required><br />
+			<input type="password" placeholder="Password" name=companyUserPassword pattern=".{6,}" required><br />
+			<input type="submit" value="Submit">
+	</form>
+</div>
+</div>
+
+</body>
+</html>
